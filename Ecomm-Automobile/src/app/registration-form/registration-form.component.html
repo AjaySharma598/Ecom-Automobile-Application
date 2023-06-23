@@ -1,0 +1,72 @@
+<div style="text-align: center;">
+    <mat-toolbar style="background-color: aqua;">
+       
+        <span style="margin-left: 40%;">Registration Form</span>
+        <span class="example-spacer"></span>
+       
+      </mat-toolbar>
+    </div>
+    <div style="margin-left: 30%; margin-top: 2%;"  class="example-container" >
+
+       <form action="" (ngSubmit)="addNote()" [formGroup]="registerForm">
+    
+        <div>
+            <mat-form-field style="width: 60%;" appearance="fill">
+                <mat-label>Enter your  Name</mat-label>
+                <input matInput placeholder="Name" formControlName="name" id="name" >
+                <mat-error *ngIf="name?.errors?.['required']">
+                  Name is Required
+                </mat-error>
+                <mat-error *ngIf="name?.errors?.['minlength']">
+                  Name is Min length should be 3</mat-error>
+                  <mat-error *ngIf="name?.errors?.['pattern']">
+                    Name allow only alphabet characters
+                  </mat-error>
+              </mat-form-field>
+        </div>
+      <div>
+        <mat-form-field style="width: 60%;" appearance="fill">
+            <mat-label>Enter your emailId</mat-label>
+            <input matInput placeholder="emailId" formControlName="emailId" id="emailId" >
+            <mat-error *ngIf="emailId?.errors?.['required']">Email id is Required</mat-error>
+            <mat-error *ngIf="emailId?.errors?.['pattern']">Email Id should be in proper Format</mat-error>
+          </mat-form-field>
+    </div>
+
+    <div>
+        <mat-form-field style="width: 60%;" appearance="fill">
+            <mat-label>Enter your mobileNo</mat-label>
+            <input matInput placeholder="mobileNumber" formControlName="mobileNumber" id="mobileNumber" >
+            <mat-error *ngIf="mobileNumber?.errors?.['required']">Mobile Number is Required</mat-error>
+            <mat-error *ngIf="mobileNumber?.errors?.['pattern']">Mobille Number Should Start 9,8,7</mat-error>
+      
+          </mat-form-field>
+      </div>
+
+    <div>
+      <mat-form-field style="width: 60%;" appearance="fill">
+          <mat-label>Enter your password</mat-label>
+          <input matInput placeholder="password" formControlName="password" id="password" >
+          <mat-error *ngIf="password?.errors?.['required']">Password is Required</mat-error>
+          <mat-error *ngIf="password?.errors?.['pattern']">Password should follow pattern Aa@1</mat-error>
+
+        </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field style="width: 60%;" appearance="fill">
+        <mat-label>Enter your confirmPassword</mat-label>
+        <input matInput placeholder="confirmPassword" formControlName="confirmPassword" id="confirmPassword" >
+        <mat-error *ngIf="confirmPassword?.errors?.['required']">Password is Required</mat-error>
+      </mat-form-field>
+      <mat-error *ngIf="registerForm.errors?.['passwordShouldMatch']===false">Password and Confirm Password does not match</mat-error>
+
+</div>
+                
+         <div>
+          <button mat-raised-button style="color: rgb(105, 101, 101);border: 2px solid rgb(105, 101, 101);" color="primary" [disabled]="registerForm.invalid" >Register</button>
+        </div>
+        
+       </form>
+       
+      </div>
+

@@ -1,0 +1,26 @@
+
+<div class="product-list-wrapper">
+    <h1>My Cart</h1>
+    <div class="row">
+        <div class="col-sm-3"  *ngFor="let item of vehicleData"  >
+            <div class="product-item">
+                <!-- this link will take us to the productdetail page -->
+                <a routerLink="../carDetail/{{item.vehicleId}}">
+                <img src="{{item.vehicleImageUrl}}"
+                    alt="">
+                </a>
+                <div class="product-details">
+                    <h6 class="name-head">{{item.vehicleName}}</h6>
+                    <div class="product-price">
+                        <h6>Price:{{item.vehiclePrice}}</h6>
+                    </div>
+                    <h4 id="remove"  (click)="remove(item.vehicleId)">Remove</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+

@@ -1,0 +1,13 @@
+<h1  style="margin-top: 25px;">Car Details</h1>
+<div class="row product-details">
+    <div class="col-sm-6">
+     <img  class="product-image" src="{{data1.vehicleImageUrl}}"alt="">
+    </div>
+    <div class="col-sm-6">
+     <div class="details">
+  <h1>{{data1.vehicleName}}</h1>
+  <h3>Price:${{data1.vehiclePrice}}</h3>
+  <button  (click)="buy(data1.vehicleId)" style="margin-left: 5px;" class="form-button">Buy Now</button>
+     </div>
+    </div>
+  </div>

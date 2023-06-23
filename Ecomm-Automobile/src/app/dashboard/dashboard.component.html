@@ -1,0 +1,43 @@
+<div>
+    <mat-toolbar style="background-color: rgb(83, 161, 250);">
+      <a id="head" routerLink="vehicleDashboard">       
+        <span>Ecomm-Automobile</span></a>
+        <span class="example-spacer"></span>
+
+       <div style="margin-left: 5%; display:flex; gap: 15px;">
+        <div  >
+          
+       <a  routerLink="Registration"> <button 
+        class="button" style="background:rgb
+          (151, 151, 212);color: black;cursor: pointer;" color="primary" aria-label="Example mini fab with a heart icon">
+          Register
+          </button> 
+        </a>
+        </div>
+       
+        <div>
+        
+            <a routerLink="Login">
+          <button class="button" style="background:rgb
+          (151, 151, 212);color: black;" color="primary" aria-label="Example mini fab with a heart icon">
+          Log In
+          </button>
+          </a>
+        </div>
+        <a id="cartRouter" routerLink="CartPage">
+        <h1 class="cart">Cart</h1>
+      </a>
+      <div style="margin-left: 130%;" >
+      
+
+      <button class="button" (click)="logout()" style=" background-color: rgb(230, 90, 90);;color: black;" color="primary" aria-label="Example mini fab with a heart icon">
+      Log Out
+      </button>
+    </div>
+        </div>
+      </mat-toolbar>
+    </div>
+   
+    <div  style="background-color: rgb(133, 141, 126);">
+    <!-- <router-outlet ></router-outlet> -->
+    </div>

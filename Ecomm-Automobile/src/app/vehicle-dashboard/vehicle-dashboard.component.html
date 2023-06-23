@@ -1,0 +1,28 @@
+<div class="product-list-wrapper">
+    <h1>Trendy  Cars</h1>
+    <div class="row">
+        <div class="col-sm-3"  *ngFor="let item of vehicleData"  >
+            <div class="product-item">
+                <!-- this link will take us to the productdetail page -->
+                <a routerLink="../carDetail/{{item.vehicleId}}" >
+                <img src="{{item.vehicleImageUrl}}"
+                    alt="">
+                </a>
+                <div class="product-details">
+                    <h6 class="name-head">{{item.vehicleName}}</h6>
+                    <div class="product-price">
+                        <h6>Price:{{item.vehiclePrice}}</h6>
+                    </div>
+                </div>
+                <div class="product-footer">
+                    <a >View Details</a>
+                    <a class="addCart" routerLink="../carDetail/{{item.vehicleId}}">Car Details</a>
+                    <a class="addCart" (click)="addToCart(item)">Add To cart</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+

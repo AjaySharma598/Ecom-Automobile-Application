@@ -1,0 +1,39 @@
+<div>
+    <mat-toolbar style="background-color: rgb(140, 214, 144);">
+       
+        <span  style="margin-left: 40%;">Login Page</span>
+        <span class="example-spacer"></span>
+       
+      </mat-toolbar>
+    </div>
+    <div  style="margin-left: 30%; margin-top: 2%;" class="example-container" >
+       <form action="" (ngSubmit)="login()" [formGroup]="loginForm">
+    
+        <div>
+            <mat-form-field style="width: 60%;" appearance="fill">
+                <mat-label>Enter your emailId</mat-label>
+                <input matInput placeholder="emailId" formControlName="emailId" id="emailId" >
+                <mat-error *ngIf="emailId?.errors?.['required']">Email id is Required</mat-error>
+              </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field style="width: 60%;" appearance="fill">
+              <mat-label>Enter your password</mat-label>
+              <input matInput placeholder="password" formControlName="password" id="password" >
+              <mat-error *ngIf="password?.errors?.['required']">Password is Required</mat-error>
+        
+  
+            </mat-form-field>
+      </div>              
+        <div>
+        <div style="padding-left: 15px;">
+            <button mat-raised-button style="color: rgb(105, 101, 101);border: 2px solid rgb(105, 101, 101);" color="primary" [disabled]="loginForm.invalid" >Login</button>
+      </div>
+       </div>
+        
+       </form>
+       
+      </div>
+      <div>
+      </div>
+
